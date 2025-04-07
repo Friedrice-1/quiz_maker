@@ -1,4 +1,5 @@
 # Initialize an empty list to store questions
+questions = []
 # Create a loop that breaks if user wants to
 # Ask user to input a question
 # Ask user to input choices A - D
