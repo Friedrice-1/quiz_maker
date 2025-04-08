@@ -34,3 +34,4 @@ with open("quiz_data.txt", "w") as f:
         f.write(f"Question: {q['question']}\n")
         for key, val in q["choices"].items():
             f.write(f"  {key}: {val}\n")
+        f.write(f"Correct Answer: {q['correct']}\n")
