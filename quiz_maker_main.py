@@ -28,5 +28,7 @@ while True:
     if continue_input == "N":
         break
 
-print(questions)
 # Write the collected data to a text file
+with open("quiz_data.txt", "w") as f:
+    for q in questions:
+        f.write(f"Question: {q['question']}\n")
