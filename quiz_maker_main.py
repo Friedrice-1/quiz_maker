@@ -35,3 +35,6 @@ with open("quiz_data.txt", "w") as f:
         for key, val in q["choices"].items():
             f.write(f"  {key}: {val}\n")
         f.write(f"Correct Answer: {q['correct']}\n")
+        f.write("-" * 40 + "\n")
+
+print("All questions saved to 'quiz_data.txt' in the same directory")
