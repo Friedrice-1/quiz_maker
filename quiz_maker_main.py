@@ -32,3 +32,5 @@ while True:
 with open("quiz_data.txt", "w") as f:
     for q in questions:
         f.write(f"Question: {q['question']}\n")
+        for key, val in q["choices"].items():
+            f.write(f"  {key}: {val}\n")
