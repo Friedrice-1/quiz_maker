@@ -29,12 +29,12 @@ while True:
         break
 
 # Write the collected data to a text file
-with open("quiz_data.txt", "w") as f:
+with open("quiz_data.txt", "w") as file:
     for q in questions:
-        f.write(f"Question: {q['question']}\n")
+        file.write(f"Question: {q['question']}\n")
         for key, val in q["choices"].items():
-            f.write(f"  {key}: {val}\n")
-        f.write(f"Correct Answer: {q['correct']}\n")
-        f.write("-" * 40 + "\n")
+            file.write(f"  {key}: {val}\n")
+        file.write(f"Correct Answer: {q['correct']}\n")
+        file.write("-" * 40 + "\n")
 
 print("All questions saved to 'quiz_data.txt' in the same directory")
