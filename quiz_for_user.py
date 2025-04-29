@@ -33,5 +33,17 @@ quiz = load_quiz()
 # shuffle the questions
 random.shuffle(quiz)
 
+print(quiz)
 # start the quiz
+score = 0
+for q in quiz:
+    print("\n" + q["Question"])
+    for key, val in q["Choices"].items():
+        print(f"  {key}: {val}")
+    user_answer = input("Your answer (A/B/C/D): ").strip().upper()
+    if user_answer == q["Correct"]:
+        print("Correct!")
+        score += 1
+    else:
+        print(f"Wrong. The correct answer was {q['correct']}.")
 # print result
