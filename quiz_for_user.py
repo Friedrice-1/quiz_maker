@@ -47,3 +47,4 @@ for q in quiz:
     else:
         print(f"Wrong. The correct answer was {q['correct']}.")
 # print result
+print(f"\nYou got {score} out of {len(quiz_questions)} correct.")
