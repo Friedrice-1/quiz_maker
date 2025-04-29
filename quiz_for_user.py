@@ -28,9 +28,10 @@ def load_quiz(filename="quiz_data.txt"):
             i += 1
     return questions
 
-quiz = load_quiz()
-print(quiz)
 # load questions from file
+quiz = load_quiz()
 # shuffle the questions
+random.shuffle(quiz)
+
 # start the quiz
 # print result
