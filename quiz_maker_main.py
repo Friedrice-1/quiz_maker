@@ -4,14 +4,25 @@ questions = []
 while True:
 # Ask user to input a question
     question = input("Please enter a question: ").capitalize()
+    if not question:
+        print("Question cannot be empty. Please try again.")
+        continue
 # Ask user to input choices A - D
     choice_a = input("Please enter choice 'A': ").upper()
     choice_b = input("Please enter choice 'B': ").upper()
     choice_c = input("Please enter choice 'C': ").upper()
     choice_d = input("Please enter choice 'D': ").upper()
+    if not all([choice_a, choice_b, choice_c, choice_d]):
+        print("All choices must be filled. Please try again.")
+        continue
 
-    correct_answer = input("Please enter the correct answer [A/B/C/D]: ").upper()
-    
+    while True:
+        correct_answer = input("Please enter the correct answer [A/B/C/D]: ").upper()
+        if correct_answer in ['A', 'B', 'C', 'D']:
+            break
+        else:
+            print("Invalid input. Please enter only A, B, C, or D.")
+
     question_data = {
         "question": question,
         "choices": {
@@ -24,7 +35,12 @@ while True:
     }
     questions.append(question_data)
 
-    continue_input = input("Do you want to continue input [Y/N]?: ").upper()
+    while True:
+        continue_input = input("Do you want to continue input [Y/N]?: ").strip().upper()
+        if continue_input in ['Y', 'N']:
+            break
+        else:
+            print("Please enter 'Y' for yes or 'N' for no.")
     if continue_input == "N":
         break
 
