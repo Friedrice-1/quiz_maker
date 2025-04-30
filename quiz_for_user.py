@@ -7,25 +7,25 @@ def load_quiz(filename="quiz_data.txt"):
         lines = file.readlines()
 
 # convert the file into a dictionary
-    i = 0
-    while i < len(lines):
-        if lines[i].startswith("Question"):
-            question_text = lines[i].strip().split("Question: ")[1]
+    index = 0
+    while index < len(lines):
+        if lines[index].startswith("Question"):
+            question_text = lines[index].strip().split("Question: ")[1]
             choices = {}
             for j in range(1,5):
-                line = lines[i+j].strip()
+                line = lines[index+j].strip()
                 key, val = line.split(": ")
                 choices[key] = val
-            correct_line = lines[i + 5].strip()
+            correct_line = lines[index + 5].strip()
             correct_answer = correct_line.split(": ")[1]
             questions.append({
                 "Question": question_text,
                 "Choices": choices,
                 "Correct": correct_answer
             })
-            i += 7
+            index += 7
         else:
-            i += 1
+            index += 1
     return questions
 
 # load questions from file
@@ -33,7 +33,6 @@ quiz = load_quiz()
 # shuffle the questions
 random.shuffle(quiz)
 
-print(quiz)
 # start the quiz
 score = 0
 for q in quiz:
